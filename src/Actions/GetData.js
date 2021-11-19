@@ -13,7 +13,7 @@ const getData = {
                     const oompaListStr = JSON.stringify({date: new Date(), ...oompaData});
                     localStorage.setItem(`${URL_OOMPA_API}${pageType === 'home' ? '/?page=' : '/'}${index}`, oompaListStr);
             }
-            return pageType === 'home' ? oompaData.list.results : oompaData
+            return pageType === 'home' ? oompaData.results : oompaData
         })()
     },
 

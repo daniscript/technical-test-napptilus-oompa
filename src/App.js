@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './index.scss';
-import { Route, Routes, useNavigate} from 'react-router-dom';
+import { Route, Routes, useNavigate, useHistory} from 'react-router-dom';
 import getData from "./Actions/GetData";
 import Navbar from "./Components/Navbar";
 import Home from './Routes/Home';
@@ -26,7 +26,6 @@ function App() {
 
 
   const handleProductDetail = async (id) => {
-    const oompaListData = await getData.getOompaData(id);
     navigate(`/detail/${id}`);
   }
 
