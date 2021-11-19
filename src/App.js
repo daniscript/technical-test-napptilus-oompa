@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './App.css';
+import './index.scss';
 import { Route, Routes, useNavigate} from 'react-router-dom';
 import getData from "./Actions/GetData";
 import Navbar from "./Components/Navbar";
@@ -11,12 +11,13 @@ function App() {
 
   const [oompaList, setOompaList] = useState([]);
   const [searchResultList, setSearchResultList] = useState([]);
+  const [page, setPage] = useState(1);
   const navigate = useNavigate();
   
 
   useEffect( ()=> {
     (async ()=> {
-      const oompaListData = await getData.getOompaList();
+      const oompaListData = await getData.getOompaData(page, 'home');
       setOompaList(oompaListData);
       setSearchResultList(oompaListData);
     })()
@@ -25,7 +26,7 @@ function App() {
 
 
   const handleProductDetail = async (id) => {
-    const oompaListData = await getData.getOompaDetail();
+    const oompaListData = await getData.getOompaData(id);
     navigate(`/detail/${id}`);
   }
 
@@ -44,7 +45,7 @@ function App() {
   <div className='App'>
       <Navbar search={handleSearch}/>
       <Routes>
-        <Route  path='/' element={ <Home oompaList={searchResultList} handleProductDetail={handleProductDetail} />} />
+        <Route  path='/' element={ <Home handleProductDetail={handleProductDetail} oompaList={searchResultList} />} />
         <Route  path='/detail/:id' element={ <Detail oompaList={oompaList}/>} /> 
       </Routes>
     </div>

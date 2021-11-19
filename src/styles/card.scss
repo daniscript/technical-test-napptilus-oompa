@@ -1,0 +1,31 @@
+.card-container {
+    display: inline-block;
+    width: 100%;
+    max-width: 370px;
+    margin: 20px 31px 10px 10px;
+    img {
+        width: 100%;
+        transition: transform 300ms ease-in-out 25ms;
+    }
+    img:hover {
+        transform: scale(1.1);
+    }
+    .text-content {
+        line-height: 1rem;
+            .name {
+                font-size: 1.5rem;
+                font-weight: 800;
+            }
+            .gender-text {
+                font-size: 1.1rem;
+                color: rgb(148, 146, 146);
+            }
+            .profession-text {
+                font-size: 1.1rem;
+                color: rgb(148, 146, 146);
+            }
+        
+    }
+
+    
+}

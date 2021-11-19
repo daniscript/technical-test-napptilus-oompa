@@ -1,0 +1,33 @@
+.detail-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .image-container {
+        margin-left: 50px;
+        img {
+            width: 100%;
+            max-width: 580px;
+        }
+    }
+    .text-content {
+        width: 100%;
+        max-width: 500px;
+        padding-left: 40px;
+        line-height: 1.8rem;
+        .fullname {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        .gender {
+            color: rgb(148, 148, 148);
+        }
+        .profession {
+            font-style: italic;
+            color: rgb(148, 148, 148);
+        }
+        .song {
+            line-height: 1.4rem;
+            margin-top: 35px;
+        }
+    }
+}
